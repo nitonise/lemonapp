@@ -32,7 +32,7 @@ const toNavItem = (link) => {
 const Header = () => {
     return (
         <header>
-            <img src="/img/logo.svg" alt="logo" />
+            <img src="/images/logo.svg" alt="logo" />
             <nav>
                 <ul>{ links.map(toNavItem) }</ul>
             </nav>

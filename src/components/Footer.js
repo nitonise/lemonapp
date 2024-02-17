@@ -33,7 +33,7 @@ const toNavItem = (link) => {
 const Footer = () => {
     return (
         <footer>
-            <img width="100" src="/img/logo_mono_v.svg" />
+            <img width="100" src="/images/logo_mono_v.svg" />
             <nav>
                 <h2>Navigation</h2>
                 <ul>{ links.map(toNavItem) }</ul>
