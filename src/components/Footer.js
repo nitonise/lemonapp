@@ -26,32 +26,41 @@ const links = [
 ];
 
 const toNavItem = (link) => {
-    return <li key={ link.title }><a href={ link.href }>{ link.title }</a></li>;
+    return <li><a href={ link.href }>{ link.title }</a></li>;
 };
 
 
 const Footer = () => {
     return (
         <footer>
-            <img width="100" src="/images/logo_mono_v.svg" />
+            <div>
+                <a href="#home">
+                    <img src="/images/logo_mono_v.svg" alt="logo" />
+                </a>
+            </div>
             <nav>
-                <h2>Navigation</h2>
-                <ul>{ links.map(toNavItem) }</ul>
+                <h2>Doormat Navigation</h2>
+                <ul>
+                    { links.map(toNavItem) }
+                </ul>
             </nav>
             <div>
                 <h2>Contacts</h2>
-                <a href="#tel:+1234567890">+1234567890</a>
-                <a href="#mailto:little.lemon@box.com">little.lemon@box.com</a>
-                <p>Lorem Ipsum Street, 12</p>
+                <ul>
+                    <li><a href="#tel:+1234567890">+1234567890</a></li>
+                    <li><a href="#mailto:little.lemon@box.com">little.lemon@box.com</a></li>
+                    <li><span>Lorem Ipsum Street, 12</span></li>
+                </ul>
             </div>
             <div>
                 <h2>Social Media</h2>
-                <a href="#facebook.com">FB</a>
-                <a href="#instagram.com">IG</a>
+                <ul>
+                    <li><a href="#facebook.com">FB</a></li>
+                    <li><a href="#instagram.com">IG</a></li>
+                </ul>
             </div>
         </footer>
     );
 };
 
 export default Footer;
-
