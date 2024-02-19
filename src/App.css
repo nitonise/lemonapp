@@ -19,6 +19,8 @@
     --font-family-2: "Karla";
 
     --content-width: 960px;
+
+    --general-padding: 1rem;
 }
 
 /* Typography */
@@ -77,20 +79,21 @@
 
 .header {
     width: var(--content-width);
-    padding: 1rem;
+    padding: var(--general-padding);
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    justify-items: center;
 }
 
 .header__logo {
-    width: 25%;
+    width: 100%;
 }
 
 .header__logo-link {
     display: flex;
     align-items: center;
+    padding: var(--general-padding);
 }
 
 .header__logo-img {
@@ -108,14 +111,19 @@
 
 .footer {
     width: var(--content-width);
-    padding: 1rem;
+    padding: var(--general-padding);
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+}
+
+.footer__section {
+    padding: var(--general-padding);
 }
 
 .footer__logo {
-    width: 15%;
+    width: 60%;
 }
 
 .footer__logo-link {
@@ -155,6 +163,6 @@
 .nav__item-link {
     display: block;
     text-decoration: none;
-    padding: 1rem;
+    padding: var(--general-padding);
     color: black;
 }

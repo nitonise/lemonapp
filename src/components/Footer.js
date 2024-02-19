@@ -37,18 +37,18 @@ const toNavItem = (link) => {
 const Footer = () => {
     return (
         <footer className="footer">
-            <div className="footer__logo">
+            <div className="footer__logo footer__section">
                 <a className="footer__logo-link" href="#home">
                     <img className="footer__logo-img" src="/images/logo_mono_v.svg" alt="logo" />
                 </a>
             </div>
-            <nav>
+            <nav className="footer__section">
                 <h2 className="section-category">Doormat Navigation</h2>
                 <ul className="footer__list">
                     { links.map(toNavItem) }
                 </ul>
             </nav>
-            <div>
+            <div className="footer__section">
                 <h2 className="section-category">Contacts</h2>
                 <ul className="footer__list">
                     <li className="paragraph">
@@ -62,7 +62,7 @@ const Footer = () => {
                     </li>
                 </ul>
             </div>
-            <div>
+            <div className="footer__section">
                 <h2 className="section-category">Social Media</h2>
                 <ul className="footer__list">
                     <li className="paragraph">
