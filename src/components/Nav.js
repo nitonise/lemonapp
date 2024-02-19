@@ -25,14 +25,19 @@ const links = [
     },
 ];
 
-const toNavItem = (link) => {
-    return <li key={ link.title }><a href={ link.href }>{ link.title }</a></li>;
-};
-
 const Nav = () => {
+
+    const toNavItem = (link) => {
+        return (
+            <li key={ link.title }>
+                <a className="nav__item-link" href={ link.href }>{ link.title }</a>
+            </li>
+        );
+    };
+
     return (
-        <nav>
-            <ul>{ links.map(toNavItem) }</ul>
+        <nav className="nav section-category">
+            <ul className="nav__items">{ links.map(toNavItem) }</ul>
         </nav>
     );
 }
