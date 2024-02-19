@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const links = [
     {
         title: "Home",
-        href: "#home",
+        href: "/",
     },
     {
         title: "About",
@@ -13,7 +15,7 @@ const links = [
     },
     {
         title: "Reservations",
-        href: "#reservations",
+        href: "/reserve-a-table",
     },
     {
         title: "Order Online",
@@ -28,7 +30,7 @@ const links = [
 const toNavItem = (link) => {
     return (
         <li className="paragraph" key={ link.title }>
-            <a className="footer__list-item-link" href={ link.href }>{ link.title }</a>
+            <Link className="footer__list-item-link" to={ link.href }>{ link.title }</Link>
         </li>
     );
 };
@@ -38,9 +40,9 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer__logo footer__section">
-                <a className="footer__logo-link" href="#home">
+                <Link className="footer__logo-link" to="/">
                     <img className="footer__logo-img" src="/images/logo_mono_v.svg" alt="logo" />
-                </a>
+                </Link>
             </div>
             <nav className="footer__section">
                 <h2 className="section-title">Doormat Navigation</h2>

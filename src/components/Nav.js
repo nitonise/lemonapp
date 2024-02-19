@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const links = [
     {
         title: "Home",
-        href: "#home",
+        href: "/",
     },
     {
         title: "About",
@@ -13,7 +15,7 @@ const links = [
     },
     {
         title: "Reservations",
-        href: "#reservations",
+        href: "/reserve-a-table",
     },
     {
         title: "Order Online",
@@ -30,7 +32,7 @@ const Nav = () => {
     const toNavItem = (link) => {
         return (
             <li key={ link.title }>
-                <a className="nav__item-link" href={ link.href }>{ link.title }</a>
+                <Link className="nav__item-link" to={ link.href }>{ link.title }</Link>
             </li>
         );
     };

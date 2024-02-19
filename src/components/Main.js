@@ -1,15 +1,14 @@
-import Brief from "./Brief";
-import Jumbotron from "./Jumbotron";
-import Specials from "./Specials";
-import Testimonials from "./Testimonials";
+import HomePage from "./HomePage";
+import ReservationPage from "./ReservationPage"
+import { Routes, Route } from "react-router-dom";
 
 const Main = () => {
     return (
         <main>
-            <Jumbotron />
-            <Specials />
-            <Testimonials />
-            <Brief />
+            <Routes>
+                <Route path="/" element={<HomePage />}></Route>
+                <Route path="/reserve-a-table" element={<ReservationPage />}></Route>
+            </Routes>
         </main>
     );
 };

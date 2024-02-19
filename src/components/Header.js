@@ -1,12 +1,13 @@
 import Nav from "./Nav";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
         <header className="header">
             <div className="header__logo">
-                <a className="header__logo-link" href="#home">
+                <Link className="header__logo-link" to="/">
                     <img className="header__logo-img" src="/images/logo.svg" alt="logo" />
-                </a>
+                </Link>
             </div>
             <Nav />
         </header>
