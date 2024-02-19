@@ -1,1 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+:root {
+    --primary-color-1: #495E57;
+    --primary-color-2: #F4CE14;
+
+    --secondary-color-1: #EE9972;
+    --secondary-color-2: #FBDABB;
+    --secondary-color-3: #EDEFEE;
+    --secondary-color-4: #333333;
+
+    --border-radius: 1.6rem;
+
+    --font-family-1: "Markazi Text";
+    --font-family-2: "Karla";
+
+    --content-width: 960px;
+}
+
+/* ========= Typography  ========= */
+
+.title {
+    font-family: var(--font-family-1);
+    font-weight: 500;
+    font-size: 6.4rem;
+}
+
+.subtitle {
+    font-family: var(--font-family-1);
+    font-weight: 400;
+    font-size: 4rem;
+}
+
+.call-to-action {
+    font-family: var(--font-family-2);
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+.section-title {
+    font-family: var(--font-family-2);
+    font-weight: 800;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.section-category {
+    font-family: var(--font-family-2);
+    font-weight: 800;
+    font-size: 1.6rem;
+}
+
+.card-title {
+    font-family: var(--font-family-2);
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.paragraph {
+    font-family: var(--font-family-2);
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+.highlight {
+    font-family: var(--font-family-2);
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+/* Header */
+
+.header {
+    width: var(--content-width);
+    padding: 1rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header__logo {
+    width: 25%;
+}
+
+.header__logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo-img {
+    width: 100%;
+}
+
+/* Main */
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer */
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Nav */
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__items {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 2rem;
+}
+
+.nav__item-link {
+    display: block;
+    text-decoration: none;
+    padding: 1rem;
+    color: black;
+}
