@@ -27,7 +27,7 @@ const links = [
 
 const toNavItem = (link) => {
     return (
-        <li className="paragraph">
+        <li className="paragraph" key={ link.title }>
             <a className="footer__list-item-link" href={ link.href }>{ link.title }</a>
         </li>
     );
