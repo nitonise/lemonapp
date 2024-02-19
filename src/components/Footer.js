@@ -26,37 +26,51 @@ const links = [
 ];
 
 const toNavItem = (link) => {
-    return <li><a href={ link.href }>{ link.title }</a></li>;
+    return (
+        <li className="paragraph">
+            <a className="footer__list-item-link" href={ link.href }>{ link.title }</a>
+        </li>
+    );
 };
 
 
 const Footer = () => {
     return (
-        <footer>
-            <div>
-                <a href="#home">
-                    <img src="/images/logo_mono_v.svg" alt="logo" />
+        <footer className="footer">
+            <div className="footer__logo">
+                <a className="footer__logo-link" href="#home">
+                    <img className="footer__logo-img" src="/images/logo_mono_v.svg" alt="logo" />
                 </a>
             </div>
             <nav>
-                <h2>Doormat Navigation</h2>
-                <ul>
+                <h2 className="section-category">Doormat Navigation</h2>
+                <ul className="footer__list">
                     { links.map(toNavItem) }
                 </ul>
             </nav>
             <div>
-                <h2>Contacts</h2>
-                <ul>
-                    <li><a href="#tel:+1234567890">+1234567890</a></li>
-                    <li><a href="#mailto:little.lemon@box.com">little.lemon@box.com</a></li>
-                    <li><span>Lorem Ipsum Street, 12</span></li>
+                <h2 className="section-category">Contacts</h2>
+                <ul className="footer__list">
+                    <li className="paragraph">
+                        <a className="footer__list-item-link" href="#tel:+1234567890">+1234567890</a>
+                    </li>
+                    <li className="paragraph">
+                        <a className="footer__list-item-link" href="#mailto:little.lemon@box.com">little.lemon@box.com</a>
+                    </li>
+                    <li className="paragraph">
+                        <span>Lorem Ipsum Street, 12</span>
+                    </li>
                 </ul>
             </div>
             <div>
-                <h2>Social Media</h2>
-                <ul>
-                    <li><a href="#facebook.com">FB</a></li>
-                    <li><a href="#instagram.com">IG</a></li>
+                <h2 className="section-category">Social Media</h2>
+                <ul className="footer__list">
+                    <li className="paragraph">
+                        <a className="footer__list-item-link" href="#facebook.com">FB</a>
+                    </li>
+                    <li className="paragraph">
+                        <a className="footer__list-item-link" href="#instagram.com">IG</a>
+                    </li>
                 </ul>
             </div>
         </footer>

@@ -21,7 +21,7 @@
     --content-width: 960px;
 }
 
-/* ========= Typography  ========= */
+/* Typography */
 
 .title {
     font-family: var(--font-family-1);
@@ -107,8 +107,34 @@
 /* Footer */
 
 .footer {
+    width: var(--content-width);
+    padding: 1rem;
+    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer__logo {
+    width: 15%;
+}
+
+.footer__logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.footer__logo-img {
+    width: 100%;
+}
+
+.footer__list {
+    margin-top: 1.5rem;
+    list-style-type: none;
+}
+
+.footer__list-item-link {
+    text-decoration: none;
+    color: black;
 }
 
 /* Nav */
