@@ -43,11 +43,17 @@
     font-size: 1.8rem;
 }
 
-.section-title {
+.section-title-up {
     font-family: var(--font-family-2);
     font-weight: 800;
     font-size: 2rem;
     text-transform: uppercase;
+}
+
+.section-title {
+    font-family: var(--font-family-2);
+    font-weight: 800;
+    font-size: 2rem;
 }
 
 .section-category {

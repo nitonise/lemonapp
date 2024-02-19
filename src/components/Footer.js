@@ -43,13 +43,13 @@ const Footer = () => {
                 </a>
             </div>
             <nav className="footer__section">
-                <h2 className="section-category">Doormat Navigation</h2>
+                <h2 className="section-title">Doormat Navigation</h2>
                 <ul className="footer__list">
                     { links.map(toNavItem) }
                 </ul>
             </nav>
             <div className="footer__section">
-                <h2 className="section-category">Contacts</h2>
+                <h2 className="section-title">Contacts</h2>
                 <ul className="footer__list">
                     <li className="paragraph">
                         <a className="footer__list-item-link" href="#tel:+1234567890">+1234567890</a>
@@ -63,7 +63,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className="footer__section">
-                <h2 className="section-category">Social Media</h2>
+                <h2 className="section-title">Social Media</h2>
                 <ul className="footer__list">
                     <li className="paragraph">
                         <a className="footer__list-item-link" href="#facebook.com">FB</a>
