@@ -21,6 +21,8 @@
     --content-width: 960px;
 
     --general-padding: 1rem;
+
+    --general-margin: 1.5rem;
 }
 
 /* Typography */
@@ -111,6 +113,7 @@
 .main {
     display: flex;
     flex-direction: column;
+    margin-top: var(--general-margin);
 }
 
 /* Footer */
@@ -118,7 +121,7 @@
 .footer {
     width: var(--content-width);
     padding: var(--general-padding);
-    margin: 0 auto;
+    margin: var(--general-padding) auto auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
@@ -220,4 +223,75 @@
     width: 60%;
     border-radius: var(--border-radius);
     margin: 0 0 -7rem;
+}
+
+/* Specials */
+.specials {
+    width: var(--content-width);
+    margin: var(--general-margin) auto auto;
+    padding: var(--general-padding);
+}
+
+.specials__main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-items: left;
+    align-items: center;
+    padding: var(--general-padding);
+}
+
+.specials__cards {
+    margin-top: var(--general-margin);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    grid-gap: 2rem;
+}
+
+/* Card */
+
+.card {
+    background-color: var(--secondary-color-3);
+    padding-bottom: var(--general-padding);
+
+}
+
+.card__img {
+    width: 100%;
+    height: 50%;
+}
+
+.card, .card__img {
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+}
+
+.card__info {
+    padding: var(--general-padding);
+    height: 35%;
+}
+
+.card__main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--general-margin);
+}
+
+.card__price {
+    color: var(--secondary-color-1);
+}
+
+.card__desc {
+    margin-top: var(--general-margin);
+}
+
+.card__btn {
+    padding: var(--general-padding);
+    border: none;
+    background-color: var(--secondary-color-3);
+    margin-top: var(--general-margin);
+}
+
+.card__btn:hover {
+    cursor: pointer;
 }
