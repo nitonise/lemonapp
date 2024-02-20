@@ -184,3 +184,40 @@
     text-align: center;
     padding: var(--general-padding);
 }
+
+/* Jumbotron */
+
+.jumbotron {
+    background-color: var(--primary-color-1);
+    min-width: var(--content-width);
+    margin-bottom: 5rem;
+}
+
+.jumbotron__content {
+    width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--general-padding);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.jumbotron__desc {
+    color: #FFFFFF;
+    padding: var(--general-padding);
+}
+
+.jumbotron__title {
+    color: var(--primary-color-2);
+}
+
+.jumbotron__text {
+    margin: 3rem 0;
+}
+
+.jumbotron__img {
+    padding: var(--general-padding);
+    width: 60%;
+    border-radius: var(--border-radius);
+    margin: 0 0 -7rem;
+}
