@@ -172,3 +172,15 @@
     padding: var(--general-padding);
     color: black;
 }
+
+/* ActionButton */
+.action-btn {
+    width: 20rem;
+    height: 6rem;
+    background-color: var(--primary-color-2);
+    border-radius: var(--border-radius);
+    border: none;
+    color: black;
+    text-align: center;
+    padding: var(--general-padding);
+}
