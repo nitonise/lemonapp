@@ -12,7 +12,7 @@ const Jumbotron = () => {
                         Assumenda quae nulla esse cupiditate,
                         laboriosam dicta ducimus excepturi aut molestiae natus possimus qui.
                     </p>
-                    <ActionButton title="Reserve a table" />
+                    <ActionButton title="Reserve a table" onClick={ () => alert("Reserve a table") }/>
                 </div>
                 <img className="jumbotron__img" src="/images/restauranfood.jpg" alt="some image"/>
             </div>
