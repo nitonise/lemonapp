@@ -1,5 +1,5 @@
 import HomePage from "./HomePage";
-import ReservationPage from "./ReservationPage"
+import BookingPage from "./BookingPage"
 import { Routes, Route } from "react-router-dom";
 
 const Main = () => {
@@ -7,7 +7,7 @@ const Main = () => {
         <main className="main">
             <Routes>
                 <Route path="/" element={<HomePage />}></Route>
-                <Route path="/reserve-a-table" element={<ReservationPage />}></Route>
+                <Route path="/book-a-table" element={<BookingPage />}></Route>
             </Routes>
         </main>
     );

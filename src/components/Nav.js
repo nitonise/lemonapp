@@ -15,7 +15,7 @@ const links = [
     },
     {
         title: "Reservations",
-        href: "/reserve-a-table",
+        href: "/book-a-table",
     },
     {
         title: "Order Online",

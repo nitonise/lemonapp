@@ -15,7 +15,7 @@ const Jumbotron = () => {
                         Assumenda quae nulla esse cupiditate,
                         laboriosam dicta ducimus excepturi aut molestiae natus possimus qui.
                     </p>
-                    <ActionButton title="Reserve a table" onClick={ () => navigate("/reserve-a-table") }/>
+                    <ActionButton title="Reserve a table" onClick={ () => navigate("/book-a-table") }/>
                 </div>
                 <img className="jumbotron__img" src="/images/restauranfood.jpg" alt="dish"/>
             </div>
