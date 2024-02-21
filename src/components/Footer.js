@@ -54,7 +54,7 @@ const Footer = () => {
                 <div className="footer__section">
                     <h2 className="section-title">Contacts</h2>
                     <ul className="footer__list">
-                        <li className="paragraphd">
+                        <li className="paragraph">
                             <a className="footer__list-item-link" href="#tel:+1234567890">+1234567890</a>
                         </li>
                         <li className="paragraph">
