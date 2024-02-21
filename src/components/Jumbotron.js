@@ -17,7 +17,7 @@ const Jumbotron = () => {
                     </p>
                     <ActionButton title="Reserve a table" onClick={ () => navigate("/reserve-a-table") }/>
                 </div>
-                <img className="jumbotron__img" src="/images/restauranfood.jpg" alt="some image"/>
+                <img className="jumbotron__img" src="/images/restauranfood.jpg" alt="dish"/>
             </div>
         </section>
     );
