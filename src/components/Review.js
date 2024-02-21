@@ -1,18 +1,23 @@
+const stars = [
+    <span className="review__star"></span>,
+    <span className="review__star">&#11088;</span>,
+    <span className="review__star">&#11088; &#11088;</span>,
+    <span className="review__star">&#11088; &#11088; &#11088;</span>,
+    <span className="review__star">&#11088; &#11088; &#11088; &#11088;</span>,
+    <span className="review__star">&#11088; &#11088; &#11088; &#11088; &#11088;</span>,
+];
+
 const Review = (props) => {
     const {
-        stars,
+        starNum,
         img,
         name,
         comment,
     } = props;
 
-    const getStars = () => {
-        return Array(stars).fill(<span className="review__star">&#11088;</span>, 0);
-    };
-
     return (
         <div className="review">
-            <div className="review__stars">{ getStars() }</div>
+            <div className="review__stars">{ stars[starNum] }</div>
             <div className="review__desc">
                 <div className="review__customer">
                     <img
