@@ -29,7 +29,7 @@ const Specials = () => {
         <section className="specials">
             <div className="specials__main">
                 <h2 className="title">This week specials!</h2>
-                <ActionButton title="Online Menu" onClick={ () => alert("Online Menu") } />
+                <ActionButton title="Online Menu" onClick={ () => alert("Not implemented yet...") } />
             </div>
             <div className="specials__cards">
                 { data.map(item => <Card key={ item.title } { ...item } />) }

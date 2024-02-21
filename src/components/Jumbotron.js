@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import ActionButton from "./ActionButton";
 
 const Jumbotron = () => {
+    const navigate = useNavigate();
+
     return (
         <section className="jumbotron">
             <div className="jumbotron__content">
@@ -12,7 +15,7 @@ const Jumbotron = () => {
                         Assumenda quae nulla esse cupiditate,
                         laboriosam dicta ducimus excepturi aut molestiae natus possimus qui.
                     </p>
-                    <ActionButton title="Reserve a table" onClick={ () => alert("Reserve a table") }/>
+                    <ActionButton title="Reserve a table" onClick={ () => navigate("/reserve-a-table") }/>
                 </div>
                 <img className="jumbotron__img" src="/images/restauranfood.jpg" alt="some image"/>
             </div>
