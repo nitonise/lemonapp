@@ -1,6 +1,32 @@
+import { useState } from "react";
+
 const BookingForm = () => {
+    const [date, setDate] = useState("");
+    const [time, setTime] = useState("");
+    const [guests, setGuests] = useState("");
+    const [occasion, setOccasion] = useState("");
+    const [name, setName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [tel, setTel] = useState("");
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        console.log(
+            "Submitted:\n",
+            date, "\n",
+            time, "\n",
+            guests, "\n",
+            occasion, "\n",
+            name, "\n",
+            lastName, "\n",
+            email, "\n",
+            tel
+        );
+    };
+
     return (
-        <form className="booking-fm">
+        <form className="booking-fm" onSubmit={ handleSubmit }>
             <fieldset className="booking-fm__field">
                 <legend className="section-title-up">Setup</legend>
                 <label
@@ -13,6 +39,8 @@ const BookingForm = () => {
                     className="booking-fm__in call-to-action"
                     type="date"
                     id="res-date"
+                    value={ date }
+                    onChange={ e => setDate(e.target.value) }
                 />
                 <label
                     className="booking-fm__lbl section-category"
@@ -23,6 +51,8 @@ const BookingForm = () => {
                 <select
                     className="booking-fm__in call-to-action"
                     id="res-time"
+                    value={ time }
+                    onChange={ e => setTime(e.target.value) }
                 >
                     <option>17:00</option>
                     <option>18:00</option>
@@ -44,6 +74,8 @@ const BookingForm = () => {
                     min="1"
                     max="10"
                     id="guests"
+                    value={ guests }
+                    onChange={ e => setGuests(e.target.value) }
                 />
                 <label
                     className="booking-fm__lbl section-category"
@@ -54,6 +86,8 @@ const BookingForm = () => {
                 <select
                     className="booking-fm__in call-to-action"
                     id="occasion"
+                    value={ occasion }
+                    onChange={ e => setOccasion(e.target.value) }
                 >
                     <option>Birthday</option>
                     <option>Anniversary</option>
@@ -71,6 +105,8 @@ const BookingForm = () => {
                     className="booking-fm__in call-to-action"
                     type="text"
                     id="res-name"
+                    value={ name }
+                    onChange={ e => setName(e.target.value) }
                 />
                 <label
                     className="booking-fm__lbl section-category"
@@ -82,6 +118,8 @@ const BookingForm = () => {
                     className="booking-fm__in call-to-action"
                     type="text"
                     id="res-last-name"
+                    value={ lastName }
+                    onChange={ e => setLastName(e.target.value) }
                 />
                 <label
                     className="booking-fm__lbl section-category"
@@ -93,6 +131,8 @@ const BookingForm = () => {
                     className="booking-fm__in call-to-action"
                     type="email"
                     id="res-email"
+                    value={ email }
+                    onChange={ e => setEmail(e.target.value) }
                 />
                 <label
                     className="booking-fm__lbl section-category"
@@ -104,6 +144,8 @@ const BookingForm = () => {
                     className="booking-fm__in call-to-action"
                     type="tel"
                     id="res-tel"
+                    value={ tel }
+                    onChange={ e => setTel(e.target.value) }
                 />
             </fieldset>
             <input
