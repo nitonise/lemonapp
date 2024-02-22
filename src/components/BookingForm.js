@@ -1,16 +1,25 @@
 import { useState } from "react";
 
-const BookingForm = (props) => {
-    var availableTimes = props.availableTimes;
-    const [time, setTime] = useState(availableTimes[0]);
-
+const BookingForm = ({ availableTimes, updateTimes }) => {
+    const [time, setTime] = useState("");
     const [date, setDate] = useState("");
-    const [guests, setGuests] = useState("1");
-    const [occasion, setOccasion] = useState("Birthday");
+    const [guests, setGuests] = useState("");
+    const [occasion, setOccasion] = useState("");
     const [name, setName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [tel, setTel] = useState("");
+
+    const cleanup = () => {
+        setTime("");
+        setDate("");
+        setGuests("");
+        setOccasion("")
+        setName("");
+        setLastName("");
+        setEmail("");
+        setTel("");
+    };
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -26,7 +35,8 @@ const BookingForm = (props) => {
             tel
         );
 
-        props.bookTime(time);
+        updateTimes(time);
+        cleanup();
     };
 
     return (
@@ -58,6 +68,7 @@ const BookingForm = (props) => {
                     value={ time }
                     onChange={ e => setTime(e.target.value) }
                 >
+                    <option value=""></option>
                     { availableTimes.map(t => <option key={t}>{t}</option>) }
                 </select>
                 <label
@@ -69,7 +80,6 @@ const BookingForm = (props) => {
                 <input
                     className="booking-fm__in call-to-action"
                     type="number"
-                    placeholder="1"
                     min="1"
                     max="10"
                     id="guests"
@@ -88,6 +98,7 @@ const BookingForm = (props) => {
                     value={ occasion }
                     onChange={ e => setOccasion(e.target.value) }
                 >
+                    <option value=""></option>
                     <option>Birthday</option>
                     <option>Anniversary</option>
                 </select>
