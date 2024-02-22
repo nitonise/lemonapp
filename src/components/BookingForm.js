@@ -1,10 +1,12 @@
 import { useState } from "react";
 
+const availableTimes = [ "17:00", "18:00", "19:00", "20:00", "21:00", "22:00" ];
+
 const BookingForm = () => {
     const [date, setDate] = useState("");
-    const [time, setTime] = useState("");
-    const [guests, setGuests] = useState("");
-    const [occasion, setOccasion] = useState("");
+    const [time, setTime] = useState(availableTimes[0]);
+    const [guests, setGuests] = useState("1");
+    const [occasion, setOccasion] = useState("Birthday");
     const [name, setName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -54,12 +56,7 @@ const BookingForm = () => {
                     value={ time }
                     onChange={ e => setTime(e.target.value) }
                 >
-                    <option>17:00</option>
-                    <option>18:00</option>
-                    <option>19:00</option>
-                    <option>20:00</option>
-                    <option>21:00</option>
-                    <option>22:00</option>
+                    { availableTimes.map(t => <option key={t}>{t}</option>) }
                 </select>
                 <label
                     className="booking-fm__lbl section-category"
