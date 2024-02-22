@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-const availableTimes = [ "17:00", "18:00", "19:00", "20:00", "21:00", "22:00" ];
-
-const BookingForm = () => {
-    const [date, setDate] = useState("");
+const BookingForm = (props) => {
+    var availableTimes = props.availableTimes;
     const [time, setTime] = useState(availableTimes[0]);
+
+    const [date, setDate] = useState("");
     const [guests, setGuests] = useState("1");
     const [occasion, setOccasion] = useState("Birthday");
     const [name, setName] = useState("");
@@ -25,6 +25,8 @@ const BookingForm = () => {
             email, "\n",
             tel
         );
+
+        props.bookTime(time);
     };
 
     return (
