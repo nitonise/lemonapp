@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const BookingForm = ({ availableTimes, updateTimes }) => {
+const BookingForm = ({ availableTimes, updateTimes, onSubmit }) => {
     const [time, setTime] = useState("");
     const [date, setDate] = useState("");
     const [guests, setGuests] = useState("");
@@ -23,20 +23,25 @@ const BookingForm = ({ availableTimes, updateTimes }) => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        const formData = {
+            date,
+            time,
+            guests,
+            occasion,
+            name,
+            email,
+            tel,
+        };
+
         console.log(
             "Submitted:\n",
-            date, "\n",
-            time, "\n",
-            guests, "\n",
-            occasion, "\n",
-            name, "\n",
-            lastName, "\n",
-            email, "\n",
-            tel
+            formData,
         );
+        const res = onSubmit(formData);
 
-        updateTimes(time);
-        cleanup();
+        if (res) {
+            cleanup();
+        }
     };
 
     return (
@@ -54,7 +59,11 @@ const BookingForm = ({ availableTimes, updateTimes }) => {
                     type="date"
                     id="res-date"
                     value={ date }
-                    onChange={ e => setDate(e.target.value) }
+                    onChange={e => {
+                        const date = e.target.value;
+                        setDate(date);
+                        updateTimes(date);
+                    }}
                 />
                 <label
                     className="booking-fm__lbl section-category"
