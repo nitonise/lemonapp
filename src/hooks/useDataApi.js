@@ -3,7 +3,7 @@ import { useEffect } from "react";
 const useDataApi = () => {
   const KEY = "availableItems";
 
-  const _setData = data => {
+  const setData = data => {
     localStorage.setItem(KEY, JSON.stringify(data));
   };
 
@@ -19,20 +19,20 @@ const useDataApi = () => {
     }
 
     const upd = fetchData(formData.date).filter(t => t !== formData.time);
-    _setData(upd);
+    setData(upd);
 
     return true;
   };
 
   useEffect(() => {
-    _setData([ "17:00", "18:00", "19:00", "20:00", "21:00", "22:00" ])
+    setData([ "17:00", "18:00", "19:00", "20:00", "21:00", "22:00" ])
 
     return () => {
       localStorage.removeItem(KEY);
     };
   }, []);
 
-  return { fetchData, submit };
+  return { fetchData, submit, setData };
 }
 
 export default useDataApi;
