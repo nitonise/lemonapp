@@ -25,6 +25,8 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
         submitForm(formData);
     };
 
+    const currentDate = new Date().toISOString().substr(0, 10);
+
     return (
         <form className="booking-fm" onSubmit={ handleSubmit }>
             <fieldset className="booking-fm__field">
@@ -39,6 +41,8 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     className="booking-fm__in call-to-action"
                     type="date"
                     id="res-date"
+                    min={ currentDate }
+                    required
                     value={ date }
                     onChange={e => {
                         const date = e.target.value;
@@ -57,6 +61,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     id="res-time"
                     value={ time }
                     onChange={ e => setTime(e.target.value) }
+                    required
                 >
                     <option value=""></option>
                     { availableTimes.map(t => <option key={t}>{t}</option>) }
@@ -74,6 +79,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     max="10"
                     id="guests"
                     value={ guests }
+                    required
                     onChange={ e => setGuests(e.target.value) }
                 />
                 <label
@@ -87,6 +93,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     id="occasion"
                     value={ occasion }
                     onChange={ e => setOccasion(e.target.value) }
+                    required
                 >
                     <option value=""></option>
                     <option>Birthday</option>
@@ -99,7 +106,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     className="booking-fm__lbl section-category"
                     htmlFor="res-name"
                 >
-                        Name
+                        First Name
                 </label>
                 <input
                     className="booking-fm__in call-to-action"
@@ -107,6 +114,8 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     id="res-name"
                     value={ name }
                     onChange={ e => setName(e.target.value) }
+                    maxLength="50"
+                    required
                 />
                 <label
                     className="booking-fm__lbl section-category"
@@ -120,6 +129,8 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     id="res-last-name"
                     value={ lastName }
                     onChange={ e => setLastName(e.target.value) }
+                    maxLength="50"
+                    required
                 />
                 <label
                     className="booking-fm__lbl section-category"
@@ -133,6 +144,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     id="res-email"
                     value={ email }
                     onChange={ e => setEmail(e.target.value) }
+                    required
                 />
                 <label
                     className="booking-fm__lbl section-category"
