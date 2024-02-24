@@ -25,18 +25,19 @@ test("Renders the BookingForm 'personal info' field", () => {
     expect(headingElement).toBeInTheDocument();
 })
 
-test("Form submit triggers updateTimes", () => {
-    const updateTimes = jest.fn();
+test("Form is submitted", () => {
+    const onSubmit = jest.fn();
 
     render(
         <BookingForm
             availableTimes={[]}
-            updateTimes={updateTimes}
+            updateTimes={jest.fn()}
+            onSubmit = {onSubmit}
         />
     );
 
     const submitButton = screen.getByRole("button");
     fireEvent.click(submitButton)
 
-    expect(updateTimes).toHaveBeenCalledTimes(1);
+    expect(onSubmit).toHaveBeenCalledTimes(1);
 })
