@@ -458,3 +458,11 @@
 .booking-fm__btn {
     margin-top: 3rem;
 }
+
+/* ConfirmedBooking */
+
+.confirmed {
+    margin: var(--general-margin) auto auto;
+    padding: var(--general-padding);
+    text-align: center;
+}

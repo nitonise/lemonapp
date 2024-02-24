@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const BookingForm = ({ availableTimes, updateTimes, onSubmit }) => {
+const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
     const [time, setTime] = useState("");
     const [date, setDate] = useState("");
     const [guests, setGuests] = useState("");
@@ -9,17 +9,6 @@ const BookingForm = ({ availableTimes, updateTimes, onSubmit }) => {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [tel, setTel] = useState("");
-
-    const cleanup = () => {
-        setTime("");
-        setDate("");
-        setGuests("");
-        setOccasion("")
-        setName("");
-        setLastName("");
-        setEmail("");
-        setTel("");
-    };
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -33,15 +22,7 @@ const BookingForm = ({ availableTimes, updateTimes, onSubmit }) => {
             tel,
         };
 
-        console.log(
-            "Submitted:\n",
-            formData,
-        );
-        const res = onSubmit(formData);
-
-        if (res) {
-            cleanup();
-        }
+        submitForm(formData);
     };
 
     return (

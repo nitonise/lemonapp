@@ -26,18 +26,18 @@ test("Renders the BookingForm 'personal info' field", () => {
 })
 
 test("Form is submitted", () => {
-    const onSubmit = jest.fn();
+    const submitForm = jest.fn();
 
     render(
         <BookingForm
             availableTimes={[]}
             updateTimes={jest.fn()}
-            onSubmit = {onSubmit}
+            submitForm = {submitForm}
         />
     );
 
     const submitButton = screen.getByRole("button");
     fireEvent.click(submitButton)
 
-    expect(onSubmit).toHaveBeenCalledTimes(1);
+    expect(submitForm).toHaveBeenCalledTimes(1);
 })
