@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useEffect, useState } from "react";
 import HomePage from "./HomePage";
 import BookingPage from "./BookingPage"
 import { Routes, Route, useNavigate } from "react-router-dom";
@@ -19,6 +19,7 @@ const Main = () => {
     };
 
     const [state, dispatch] = useReducer(updateTimes, new Date(), initializeTimes);
+    const [notify, setNotify] = useState(false);
 
     const navigate = useNavigate();
     const submitForm = (formData) => {
@@ -31,8 +32,16 @@ const Main = () => {
 
         if (res) {
             navigate("/booking-confirmed");
+        } else {
+            setNotify(true);
         }
     };
+
+    useEffect(() => {
+        if (notify) {
+            alert("Oops, something went wrong. Please try submitting the form again. Do not give up!");
+        }
+    }, [notify]);
 
     return (
         <main className="main">
