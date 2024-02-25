@@ -87,6 +87,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     id="res-date"
                     min={ currentDate }
                     required
+                    aria-required="true"
                     value={ date.value }
                     onChange={e => {
                         setDate({ ...date, value: e.target.value });
@@ -113,6 +114,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     onChange={ e => setTime({ ...time, value: e.target.value }) }
                     onBlur={ () => setTime({ ...time, isTouched: true }) }
                     required
+                    aria-required="true"
                 >
                     <option value=""></option>
                     { availableTimes.map(t => <option key={t}>{t}</option>) }
@@ -137,6 +139,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     id="guests"
                     value={ guests.value }
                     required
+                    aria-required="true"
                     onChange={ e => setGuests({ ...guests, value: e.target.value }) }
                     onBlur={ () => setGuests({ ...guests, isTouched: true }) }
                 />
@@ -159,6 +162,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     value={ occasion.value }
                     onChange={ e => setOccasion({ ...occasion, value: e.target.value }) }
                     required
+                    aria-required="true"
                     onBlur={ () => setOccasion({ ...occasion, isTouched: true }) }
                 >
                     <option value=""></option>
@@ -189,6 +193,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     onBlur={ () => setFirstName({ ...firstName, isTouched: true }) }
                     maxLength="50"
                     required
+                    aria-required="true"
                 />
                 {(
                     firstName.isTouched && !validateFirstName(firstName.value)
@@ -211,6 +216,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     onBlur={ () => setLastName({ ...lastName, isTouched: true }) }
                     maxLength="50"
                     required
+                    aria-required="true"
                 />
                 {(
                     lastName.isTouched && !validateLastName(lastName.value)
@@ -232,6 +238,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                     onChange={ e => setEmail({ ...email, value: e.target.value }) }
                     onBlur={ () => setEmail({ ...email, isTouched: true }) }
                     required
+                    aria-required="true"
                 />
                 {(
                     email.isTouched && !validateEmail(email.value)
