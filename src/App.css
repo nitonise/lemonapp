@@ -466,3 +466,11 @@
     padding: var(--general-padding);
     text-align: center;
 }
+
+/* ErrMessage */
+
+.err-msg {
+    color: red;
+    margin-top: 0.3rem;
+    display: inline-block;
+}
