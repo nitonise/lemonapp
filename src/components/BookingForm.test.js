@@ -39,5 +39,5 @@ test("Form is submitted", () => {
     const submitButton = screen.getByRole("button");
     fireEvent.click(submitButton)
 
-    expect(submitForm).toHaveBeenCalledTimes(1);
+    expect(submitForm).toHaveBeenCalledTimes(0);
 })

@@ -57,22 +57,17 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        if (!isFormValid()) {
-            alert("An invalid form cannot be submitted.\Please check the form and try again.");
-            return;
+        if (isFormValid()) {
+            submitForm({
+                date: date.value,
+                time: time.value,
+                guests: guests.value,
+                occasion: occasion.value,
+                firstName: firstName.value,
+                email: email.value,
+                tel: tel.value,
+            });
         }
-
-        const formData = {
-            date: date.value,
-            time: time.value,
-            guests: guests.value,
-            occasion: occasion.value,
-            firstName: firstName.value,
-            email: email.value,
-            tel: tel.value,
-        };
-
-        submitForm(formData);
     };
 
     const currentDate = new Date().toISOString().substr(0, 10);
@@ -102,7 +97,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                 />
                 {(
                     date.isTouched && !validateDate(date.value)
-                    ? <ErrMessage text={ "Indicate the date, set current or later" } />
+                    ? <ErrMessage text="Indicate the date, set current or later" />
                     : null
                 )}
 
@@ -125,7 +120,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                 </select>
                 {(
                     time.isTouched && !validateTime(time.value)
-                    ? <ErrMessage text={ "Indicate the time, choose among available ones" } />
+                    ? <ErrMessage text="Indicate the time, choose among available ones" />
                     : null
                 )}
 
@@ -148,7 +143,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                 />
                 {(
                     guests.isTouched && !validateGuests(guests.value)
-                    ? <ErrMessage text={ "Indicate the number of guests, from 1 to 10" } />
+                    ? <ErrMessage text="Indicate the number of guests, from 1 to 10" />
                     : null
                 )}
 
@@ -173,7 +168,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                 </select>
                 {(
                     occasion.isTouched && !validateOccasion(occasion.value)
-                    ? <ErrMessage text={ "Indicate the occasion, choose among available ones" } />
+                    ? <ErrMessage text="Indicate the occasion, choose among available ones" />
                     : null
                 )}
 
@@ -198,7 +193,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                 />
                 {(
                     firstName.isTouched && !validateFirstName(firstName.value)
-                    ? <ErrMessage text={ "Indicate your first name" } />
+                    ? <ErrMessage text="Indicate your first name" />
                     : null
                 )}
 
@@ -220,7 +215,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                 />
                 {(
                     lastName.isTouched && !validateLastName(lastName.value)
-                    ? <ErrMessage text={ "Indicate your last name" } />
+                    ? <ErrMessage text="Indicate your last name" />
                     : null
                 )}
 
@@ -241,7 +236,7 @@ const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
                 />
                 {(
                     email.isTouched && !validateEmail(email.value)
-                    ? <ErrMessage text={ "Indicate your email" } />
+                    ? <ErrMessage text="Indicate your email" />
                     : null
                 )}
 
