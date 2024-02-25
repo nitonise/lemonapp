@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import BookingForm from './BookingForm';
+import BookingForm, * as subject from './BookingForm';
 
 describe("Renders fieldsets", () => {
     test("Setup", () => {
@@ -68,5 +68,77 @@ describe("Submits the form", () => {
         fireEvent.click(screen.getByRole("button"))
 
         expect(submitForm).toHaveBeenCalledTimes(1);
+    });
+});
+
+describe(("Validates date"), () => {
+    test("invalid", () => {
+        expect(subject.validateDate("0000-00-00")).toBe(false);
+    });
+
+    test("valid", () => {
+        const curDate = new Date().toISOString().substr(0, 10);
+        expect(subject.validateDate(curDate)).toBe(true);
+    });
+});
+
+describe(("Validates time"), () => {
+    test("invalid", () => {
+        expect(subject.validateTime("")).toBe(false);
+    });
+
+    test("valid", () => {
+        expect(subject.validateTime("10:10")).toBe(true);
+    });
+});
+
+
+describe(("Validates guests"), () => {
+    test("invalid", () => {
+        expect(subject.validateGuests(0)).toBe(false);
+    });
+
+    test("valid", () => {
+        expect(subject.validateGuests(1)).toBe(true);
+    });
+});
+
+describe(("Validates occasion"), () => {
+    test("invalid", () => {
+        expect(subject.validateOccasion("")).toBe(false);
+    });
+
+    test("valid", () => {
+        expect(subject.validateOccasion("Birthday")).toBe(true);
+    });
+});
+
+describe(("Validates first name"), () => {
+    test("invalid", () => {
+        expect(subject.validateFirstName(" ")).toBe(false);
+    });
+
+    test("valid", () => {
+        expect(subject.validateFirstName("John")).toBe(true);
+    });
+});
+
+describe(("Validates last name"), () => {
+    test("invalid", () => {
+        expect(subject.validateLastName(" ")).toBe(false);
+    });
+
+    test("valid", () => {
+        expect(subject.validateLastName("Doe")).toBe(true);
+    });
+});
+
+describe(("Validates email"), () => {
+    test("invalid", () => {
+        expect(subject.validateEmail("invalid@email")).toBe(false);
+    });
+
+    test("valid", () => {
+        expect(subject.validateEmail("valid@email.oo")).toBe(true);
     });
 });

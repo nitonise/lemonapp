@@ -1,33 +1,32 @@
 import { useState } from "react";
 
-const validateDate = date => {
+export const validateDate = date => {
     const curDate = new Date().toISOString().substr(0, 10);
     return date >= curDate;
 };
 
-const validateTime = time => {
+export const validateTime = time => {
     return !!time.trim();
 };
 
-const validateGuests = num => {
+export const validateGuests = num => {
     return num >= 1 && num <= 10;
 };
 
-const validateOccasion = val => {
+export const validateOccasion = val => {
     return !!val.trim();
 };
 
-const validateFirstName = name => {
+export const validateFirstName = name => {
     return !!name.trim() && name.length <= 50;
 };
 
-const validateLastName = name => {
+export const validateLastName = name => {
     return !!name.trim() && name.length <= 50;
 };
 
-const validateEmail = email => {
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return !!email.trim() && email.match(emailRegex);
+export const validateEmail = email => {
+    return !!email.trim() && /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email);
 }
 
 const ErrMessage = ({ text }) => {
