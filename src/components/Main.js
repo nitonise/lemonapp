@@ -1,9 +1,13 @@
-import { useReducer, useEffect, useState } from "react";
-import HomePage from "./HomePage";
-import BookingPage from "./BookingPage"
-import { Routes, Route, useNavigate } from "react-router-dom";
-import useDataApi from "../hooks/useDataApi";
-import ConfirmedBooking from "./ConfirmedBooking"
+import { useReducer, useEffect, useState } from 'react';
+import HomePage from './HomePage';
+import BookingPage from './BookingPage'
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import useDataApi from '../hooks/useDataApi';
+import ConfirmedBooking from './ConfirmedBooking'
+
+const Notification = ({ text }) => {
+    return <strong>{ text }</strong>
+};
 
 const Main = () => {
 
@@ -23,15 +27,10 @@ const Main = () => {
 
     const navigate = useNavigate();
     const submitForm = (formData) => {
-        console.log(
-            "formData:\n",
-            formData
-        );
-
         const res = submit(formData);
 
         if (res) {
-            navigate("/booking-confirmed");
+            navigate('/booking-confirmed');
         } else {
             setNotify(true);
         }
@@ -39,16 +38,16 @@ const Main = () => {
 
     useEffect(() => {
         if (notify) {
-            alert("Oops, something went wrong. Please try submitting the form again. Do not give up!");
+            alert('Oops, something went wrong. Please try submitting the form again. Do not give up!');
         }
     }, [notify]);
 
     return (
-        <main className="main">
+        <main className='main'>
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path='/' element={<HomePage />} />
                 <Route
-                    path="/book-a-table"
+                    path='/book-a-table'
                     element={
                         <BookingPage
                             availableTimes ={ state }
@@ -56,7 +55,7 @@ const Main = () => {
                             submitForm = { submitForm }
                         />}
                 />
-                <Route path="/booking-confirmed" element={<ConfirmedBooking />} />
+                <Route path='/booking-confirmed' element={<ConfirmedBooking />} />
             </Routes>
         </main>
     );

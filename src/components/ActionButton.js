@@ -1,7 +1,7 @@
 const ActionButton = ({ title, onClick }) => {
     return (
         <button
-            className="action-btn call-to-action"
+            className='action-btn call-to-action'
             onClick={ onClick }
         >
             { title }

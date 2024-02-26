@@ -15,8 +15,8 @@
 
     --border-radius: 1.6rem;
 
-    --font-family-1: "Markazi Text";
-    --font-family-2: "Karla";
+    --font-family-1: 'Markazi Text';
+    --font-family-2: 'Karla';
 
     --content-width: 960px;
 
@@ -193,6 +193,11 @@
     color: black;
     text-align: center;
     padding: var(--general-padding);
+    box-shadow: 0.2rem 0.5rem 0.8rem 0.1rem var(--secondary-color-4);
+}
+
+.action-btn:active {
+    box-shadow: none;
 }
 
 /* Jumbotron */

@@ -7,21 +7,21 @@ const Card = (props) => {
     } = props;
 
     return (
-        <div className="card">
+        <div className='card'>
             <img
-                className="card__img"
+                className='card__img'
                 src={ imgSrc }
                 alt={ title }
             />
-            <div className="card__info">
-                <div className="card__main">
-                    <h2 className="card-title">{ title }</h2>
-                    <span className="card__price highlight">${ price }</span>
+            <div className='card__info'>
+                <div className='card__main'>
+                    <h2 className='card-title'>{ title }</h2>
+                    <span className='card__price highlight'>${ price }</span>
                 </div>
-                <p className="card__desc paragraph">{ desc }</p>
+                <p className='card__desc paragraph'>{ desc }</p>
             </div>
             <button
-              className="card__btn call-to-action"
+              className='card__btn call-to-action'
               onClick={ () => alert(`${title} - ordered`) }
             >
                     Order a delivery

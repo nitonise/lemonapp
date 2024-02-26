@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 const useDataApi = () => {
-  const KEY = "availableItems";
+  const KEY = 'availableItems';
 
   const setData = data => {
     localStorage.setItem(KEY, JSON.stringify(data));
@@ -14,18 +14,20 @@ const useDataApi = () => {
   const submit = formData => {
     const random = Math.random();
 
-    if (random < 0.5) {
-      return false;
-    }
+    return false;
 
-    const upd = fetchData(formData.date).filter(t => t !== formData.time);
-    setData(upd);
+    // if (random < 0.5) {
+    //   return false;
+    // }
 
-    return true;
+    // const upd = fetchData(formData.date).filter(t => t !== formData.time);
+    // setData(upd);
+
+    // return true;
   };
 
   useEffect(() => {
-    setData([ "17:00", "18:00", "19:00", "20:00", "21:00", "22:00" ])
+    setData([ '17:00', '18:00', '19:00', '20:00', '21:00', '22:00' ])
 
     return () => {
       localStorage.removeItem(KEY);
