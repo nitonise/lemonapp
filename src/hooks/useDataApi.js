@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const useDataApi = () => {
   const KEY = 'availableItems';
@@ -11,19 +11,20 @@ const useDataApi = () => {
     return JSON.parse(localStorage.getItem(KEY)) || [];
   };
 
+  const [response, setResponse] = useState({ code: 0 });
+
   const submit = formData => {
     const random = Math.random();
 
-    return false;
+    if (random < 0.5) {
+      setResponse(r => ({...r, code: 500}));
+      return;
+    }
 
-    // if (random < 0.5) {
-    //   return false;
-    // }
+    const upd = fetchData(formData.date).filter(t => t !== formData.time);
+    setData(upd);
 
-    // const upd = fetchData(formData.date).filter(t => t !== formData.time);
-    // setData(upd);
-
-    // return true;
+    setResponse(r => ({...r, code: 200}));
   };
 
   useEffect(() => {
@@ -34,7 +35,7 @@ const useDataApi = () => {
     };
   }, []);
 
-  return { fetchData, submit, setData };
+  return { fetchData, submit, response, setData };
 }
 
 export default useDataApi;

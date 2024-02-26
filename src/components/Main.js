@@ -1,17 +1,13 @@
-import { useReducer, useEffect, useState } from 'react';
+import { useReducer, useEffect } from 'react';
 import HomePage from './HomePage';
 import BookingPage from './BookingPage'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import useDataApi from '../hooks/useDataApi';
 import ConfirmedBooking from './ConfirmedBooking'
 
-const Notification = ({ text }) => {
-    return <strong>{ text }</strong>
-};
-
 const Main = () => {
 
-    const {fetchData, submit} = useDataApi();
+    const {fetchData, submit, response} = useDataApi();
 
     const updateTimes = (state, action) => {
         const date = action.type;
@@ -23,24 +19,21 @@ const Main = () => {
     };
 
     const [state, dispatch] = useReducer(updateTimes, new Date(), initializeTimes);
-    const [notify, setNotify] = useState(false);
 
     const navigate = useNavigate();
     const submitForm = (formData) => {
-        const res = submit(formData);
+        submit(formData);
 
-        if (res) {
+        if (response.code === 200) {
             navigate('/booking-confirmed');
-        } else {
-            setNotify(true);
         }
     };
 
     useEffect(() => {
-        if (notify) {
+        if (response.code === 500) {
             alert('Oops, something went wrong. Please try submitting the form again. Do not give up!');
         }
-    }, [notify]);
+    }, [response]);
 
     return (
         <main className='main'>

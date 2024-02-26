@@ -3,6 +3,7 @@ import useDataApi from './useDataApi';
 import React from 'react';
 
 test('Write data to the local storage', () => {
+    jest.spyOn(React, 'useState').mockImplementation(() => [{}, jest.fn()]);
     jest.spyOn(React, 'useEffect').mockImplementation(() => {});
 
     const spy = jest.spyOn(Storage.prototype, 'setItem');
@@ -15,6 +16,7 @@ test('Write data to the local storage', () => {
 });
 
 test('Read data from the local storage', () => {
+    jest.spyOn(React, 'useState').mockImplementation(() => [{}, jest.fn()]);
     jest.spyOn(React, 'useEffect').mockImplementation(() => {});
 
     const spy = jest.spyOn(Storage.prototype, 'getItem');
